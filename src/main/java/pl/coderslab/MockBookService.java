@@ -31,7 +31,7 @@ public class MockBookService implements BookService{
 
     @Override
     public Optional<Book> get(Long id) {
-        return Optional.empty();
+        return books.stream().filter(item -> item.getId().equals(id)).findFirst();
     }
 
     @Override
